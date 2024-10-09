@@ -9,7 +9,7 @@ import java.util.List;
 @FeignClient(name = "connections-service", path = "/connections")
 public interface ConnectionsClient {
 
-    @GetMapping("/core/{userId}/first-degree")
+    @GetMapping("/core/first-degree")
     List<PersonDto> getFirstConnections();
 
 }
