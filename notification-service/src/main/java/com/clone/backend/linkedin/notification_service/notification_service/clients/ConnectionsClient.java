@@ -1,6 +1,6 @@
 package com.clone.backend.linkedin.notification_service.notification_service.clients;
 
-import com.codingshuttle.linkedin.notification_service.dto.PersonDto;
+import com.clone.backend.linkedin.notification_service.notification_service.dto.PersonDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;

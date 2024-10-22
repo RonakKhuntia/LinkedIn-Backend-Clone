@@ -1,10 +1,10 @@
 package com.clone.backend.linkedin.notification_service.notification_service.consumer;
 
-import com.codingshuttle.linkedin.notification_service.clients.ConnectionsClient;
-import com.codingshuttle.linkedin.notification_service.dto.PersonDto;
-import com.codingshuttle.linkedin.notification_service.service.SendNotification;
-import com.codingshuttle.linkedin.posts_service.event.PostCreatedEvent;
-import com.codingshuttle.linkedin.posts_service.event.PostLikedEvent;
+import com.clone.backend.linkedin.notification_service.notification_service.clients.ConnectionsClient;
+import com.clone.backend.linkedin.notification_service.notification_service.dto.PersonDto;
+import com.clone.backend.linkedin.notification_service.notification_service.service.SendNotification;
+import com.clone.backend.linkedin.notification_service.posts_service.event.PostCreatedEvent;
+import com.clone.backend.linkedin.notification_service.posts_service.event.PostLikedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

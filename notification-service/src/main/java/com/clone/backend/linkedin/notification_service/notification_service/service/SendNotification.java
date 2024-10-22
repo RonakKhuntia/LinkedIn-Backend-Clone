@@ -1,7 +1,7 @@
 package com.clone.backend.linkedin.notification_service.notification_service.service;
 
-import com.codingshuttle.linkedin.notification_service.entity.Notification;
-import com.codingshuttle.linkedin.notification_service.repository.NotificationRepository;
+import com.clone.backend.linkedin.notification_service.notification_service.entity.Notification;
+import com.clone.backend.linkedin.notification_service.notification_service.repository.NotificationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
