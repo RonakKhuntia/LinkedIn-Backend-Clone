@@ -1,0 +1,19 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: posts-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postsDB
+    username:
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
