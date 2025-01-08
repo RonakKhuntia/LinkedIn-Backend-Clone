@@ -1,5 +1,6 @@
 package com.clone.backend.linkedin.posts_service.controller;
 
+import com.clone.backend.linkedin.posts_service.auth.UserContextHolder;
 import com.clone.backend.linkedin.posts_service.model.PostCreateDto;
 import com.clone.backend.linkedin.posts_service.model.PostDto;
 import com.clone.backend.linkedin.posts_service.service.PostsService;
@@ -24,6 +25,7 @@ public class PostsController {
     }
     @GetMapping("/{postId}")
     public ResponseEntity<PostDto> getPost(@PathVariable Long postId) {
+        Long userId = UserContextHolder.getCurrentUserId();
         PostDto postDto = postsService.getPostById(postId);
         return ResponseEntity.ok(postDto);
     }
