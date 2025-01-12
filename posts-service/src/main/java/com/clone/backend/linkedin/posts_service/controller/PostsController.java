@@ -18,9 +18,8 @@ import java.util.List;
 public class PostsController {
     private final PostsService postsService;
     @PostMapping
-    public ResponseEntity<PostDto> createPost(@RequestBody PostCreateDto postDto,
-                                              HttpServletRequest request) {
-        PostDto createdPost = postsService.createPost(postDto, 1L);
+    public ResponseEntity<PostDto> createPost(@RequestBody PostCreateDto postDto) {
+        PostDto createdPost = postsService.createPost(postDto);
         return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
     }
     @GetMapping("/{postId}")
