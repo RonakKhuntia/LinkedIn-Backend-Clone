@@ -3,16 +3,16 @@ spring:
     name: notification-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/notificationDB
-    username:
-    password:
+    url: jdbc:postgresql://notification-db:5432/notificationDB
+    username: user
+    password: password
 
   jpa:
     hibernate:
       ddl-auto: create-drop
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka:9092
     consumer:
       group-id: ${spring.application.name}
       key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
@@ -29,5 +29,5 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discovery-server:8761/eureka/
 

@@ -8,9 +8,9 @@ spring:
     name: user-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/userDB
-    username:
-    password:
+    url: jdbc:postgresql://user-db:5432/userDB
+    username: user
+    password: password
 
   jpa:
     hibernate:
@@ -25,5 +25,5 @@ jwt:
 
 eureka:
   client:
-    service-url.defaultZone: http://localhost:8761/eureka
+    service-url.defaultZone: http://discovery-server:8761/eureka
 
