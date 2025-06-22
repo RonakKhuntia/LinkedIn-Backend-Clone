@@ -32,9 +32,9 @@ public class PostsController {
         return ResponseEntity.ok(postDto);
     }
 
-    @GetMapping("/users/{userId}/allPosts")
-    public ResponseEntity<List<PostDto>> getAllPostsOfUser(@PathVariable Long userId) {
-        List<PostDto> posts = postsService.getAllPostsOfUser(userId);
+    @GetMapping("/user/allPosts")
+    public ResponseEntity<List<PostDto>> getAllPostsOfUser() {
+        List<PostDto> posts = postsService.getAllPostsOfUser(UserContextHolder.getCurrentUserId());
         return ResponseEntity.ok(posts);
     }
 
