@@ -6,7 +6,7 @@ spring:
     uri: bolt://connections-db:7687
     authentication:
       username: neo4j
-      password: 67f5ef99116@C
+      password: password
 
   kafka:
     bootstrap-servers: kafka:9092
