@@ -16,21 +16,26 @@ import java.util.List;
 @RequestMapping("/core")
 @RequiredArgsConstructor
 public class PostsController {
+
     private final PostsService postsService;
+
     @PostMapping
     public ResponseEntity<PostDto> createPost(@RequestBody PostCreateDto postDto) {
         PostDto createdPost = postsService.createPost(postDto);
         return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
     }
+
     @GetMapping("/{postId}")
     public ResponseEntity<PostDto> getPost(@PathVariable Long postId) {
         Long userId = UserContextHolder.getCurrentUserId();
         PostDto postDto = postsService.getPostById(postId);
         return ResponseEntity.ok(postDto);
     }
+
     @GetMapping("/users/{userId}/allPosts")
     public ResponseEntity<List<PostDto>> getAllPostsOfUser(@PathVariable Long userId) {
         List<PostDto> posts = postsService.getAllPostsOfUser(userId);
         return ResponseEntity.ok(posts);
     }
+
 }

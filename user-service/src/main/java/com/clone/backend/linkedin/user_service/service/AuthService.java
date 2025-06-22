@@ -1,9 +1,11 @@
 package com.clone.backend.linkedin.user_service.service;
 
+import com.clone.backend.linkedin.user_service.client.ConnectionClient;
 import com.clone.backend.linkedin.user_service.entity.User;
 import com.clone.backend.linkedin.user_service.exception.BadRequestException;
 import com.clone.backend.linkedin.user_service.exception.ResourceNotFoundException;
 import com.clone.backend.linkedin.user_service.model.LoginDto;
+import com.clone.backend.linkedin.user_service.model.PersonDto;
 import com.clone.backend.linkedin.user_service.model.SignupDto;
 import com.clone.backend.linkedin.user_service.model.UserDto;
 import com.clone.backend.linkedin.user_service.repository.UserRepository;
@@ -19,6 +21,7 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     private final UserRepository userRepository;
+    private final ConnectionClient connectionClient;
     private final ModelMapper modelMapper;
     private final JwtService jwtService;
 
@@ -30,6 +33,7 @@ public class AuthService {
         User user = modelMapper.map(signupDto, User.class);
         user.setPassword(PasswordUtil.hashPassword(signupDto.getPassword()));
         User savedUser = userRepository.save(user);
+        connectionClient.createPerson(PersonDto.builder().userId(savedUser.getId()).name(savedUser.getName()).build());
         return modelMapper.map(savedUser, UserDto.class);
     }
 

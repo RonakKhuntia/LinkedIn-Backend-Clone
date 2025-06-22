@@ -91,4 +91,8 @@ public class ConnectionsService {
         return true;
     }
 
+    public void createPerson(Person person) {
+        personRepository.save(person);
+    }
+
 }

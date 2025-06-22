@@ -84,7 +84,7 @@ services:
       - linkedin-network
 
   discovery-server:
-    image: rounakkhuntia/linkedin-app/discovery-server
+    image: rounakkhuntia1706/linkedin-app/discovery-server
     container_name: discovery-server
     networks:
       - linkedin-network
@@ -92,7 +92,7 @@ services:
       - "8761:8761"
 
   posts-service:
-    image: rounakkhuntia/linkedin-app/posts-service
+    image: rounakkhuntia1706/linkedin-app/posts-service
     container_name: posts-service
     networks:
       - linkedin-network
@@ -102,7 +102,7 @@ services:
       - kafka
 
   user-service:
-    image: rounakkhuntia/linkedin-app/user-service
+    image: rounakkhuntia1706/linkedin-app/user-service
     container_name: user-service
     networks:
       - linkedin-network
@@ -112,7 +112,7 @@ services:
       - kafka
 
   notification-service:
-    image: rounakkhuntia/linkedin-app/notification-service
+    image: rounakkhuntia1706/linkedin-app/notification-service
     container_name: notification-service
     networks:
       - linkedin-network
@@ -122,7 +122,7 @@ services:
       - kafka
 
   connections-service:
-    image: rounakkhuntia/linkedin-app/connections-service
+    image: rounakkhuntia1706/linkedin-app/connections-service
     container_name: connections-service
     networks:
       - linkedin-network
@@ -132,7 +132,7 @@ services:
       - kafka
 
   api-gateway:
-    image: rounakkhuntia/linkedin-app/api-gateway
+    image: rounakkhuntia1706/linkedin-app/api-gateway
     container_name: api-gateway
     ports:
       - "8081:8081"

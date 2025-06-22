@@ -8,9 +8,9 @@ spring:
     name: posts-service
 
   datasource:
-    url: jdbc:postgresql://posts-db:5432/postsDB
-    username: user
-    password: password
+    url: jdbc:postgresql://localhost:5432/postsDB
+    username: postgres
+    password: 67f5ef99116@C
 
   jpa:
     hibernate:
@@ -21,11 +21,13 @@ spring:
         format_sql: true
 
   kafka:
-    bootstrap-servers: kafka:9092
+    bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.LongSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
-    service-url.defaultZone: http://discovery-server:8761/eureka
+    service-url.defaultZone: http://localhost:8761/eureka
