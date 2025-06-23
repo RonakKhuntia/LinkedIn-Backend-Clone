@@ -39,8 +39,8 @@ services:
     container_name: notification-db
     environment:
       - POSTGRES_DB=notificationDB
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=67f5ef99116@C
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
     networks:
       - linkedin-network
     volumes:
@@ -51,8 +51,8 @@ services:
     container_name: posts-db
     environment:
       - POSTGRES_DB=postsDB
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=67f5ef99116@C
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
     networks:
       - linkedin-network
     volumes:
@@ -63,8 +63,8 @@ services:
     container_name: user-db
     environment:
       - POSTGRES_DB=userDB
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=67f5ef99116@C
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
     networks:
       - linkedin-network
     volumes:
@@ -74,7 +74,7 @@ services:
     image: neo4j
     container_name: connections-db
     environment:
-      - NEO4J_AUTH=neo4j/67f5ef99116@C
+      - NEO4J_AUTH=neo4j/password
     ports:
       - "7474:7474"  # HTTP port
       - "7687:7687"  # Bolt port
