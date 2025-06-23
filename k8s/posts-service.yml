@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: posts-service
-        image: rounak1706/linkedin-app-posts-service
+        image: rounakkhuntia1706/linkedin-app-posts-service
         resources:
           limits:
             memory: "400Mi"
@@ -25,7 +25,7 @@ spec:
           - name: SPRING_PROFILES_ACTIVE
             value: k8s
           - name: DB_USER
-            value: postgres
+            value: user
           - name: DB_PASSWORD
             value: password
           - name: DB_SERVICE

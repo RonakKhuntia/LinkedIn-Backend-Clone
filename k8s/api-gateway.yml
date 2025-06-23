@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: rounak1706/linkedin-app-api-gateway
+        image: rounakkhuntia1706/linkedin-app-api-gateway
         resources:
           limits:
               memory: "500Mi"
@@ -30,9 +30,9 @@ spec:
           httpGet:
             path: /actuator/health
             port: 8080
-          initialDelaySeconds: 300
+          initialDelaySeconds: 10   
           periodSeconds: 20
-          timeoutSeconds: 20
+          timeoutSeconds: 5
 
 ---
 apiVersion: v1

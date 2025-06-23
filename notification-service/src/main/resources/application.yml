@@ -4,7 +4,7 @@ spring:
 
   datasource:
     url: jdbc:postgresql://notification-db:5432/notificationDB
-    username: postgres
+    username: user
     password: password
 
   jpa:
@@ -35,4 +35,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://discovery-server:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false
 

@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: rounak1706/linkedin-app-user-service
+        image: rounakkhuntia1706/linkedin-app-user-service
         imagePullPolicy: Always
         resources:
           limits:
