@@ -22,14 +22,14 @@ spec:
             memory: "100Mi"
             cpu: "100m"
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: k8s  
         readinessProbe:
           httpGet:
             path: /actuator/health
-            port: 8080
+            port: 8081
           initialDelaySeconds: 10   
           periodSeconds: 20
           timeoutSeconds: 5
@@ -45,5 +45,5 @@ spec:
     app: api-gateway
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 8081
 
